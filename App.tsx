@@ -461,13 +461,18 @@ const App: React.FC = () => {
                   <p className="text-slate-500 leading-relaxed mb-8 md:mb-10 text-base md:text-lg font-light flex-1">{proj.description}</p>
                   {proj.link ? (
                     <a href={proj.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-rose-500 text-sm font-bold group-hover:underline group/link">
-                      {proj.title === "VibeCheckAI" ? "Show Demo" : "View Repository"} <ExternalLink size={16} className="ml-2 group-hover/link:-translate-y-1 group-hover/link:translate-x-1 transition-transform" />
+                      View Repository <ExternalLink size={16} className="ml-2 group-hover/link:-translate-y-1 group-hover/link:translate-x-1 transition-transform" />
                     </a>
                   ) : (
                     <a href="#" className="inline-flex items-center text-rose-500 text-sm font-bold group-hover:underline group/link">
                       Explore Deep Dive <ArrowRight size={16} className="ml-2 group-hover/link:translate-x-2 transition-transform" />
                     </a>
                   )}
+                              {proj.demoLink && (
+              <a href={proj.demoLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-rose-500 text-sm font-bold group-hover:underline group/link mt-2">
+                View Demo <ExternalLink size={16} className="ml-2 group-hover/link:-translate-y-1 group-hover/link:translate-x-1 transition-transform" />
+              </a>
+            )}
                 </div>
               </div>
             ))}
