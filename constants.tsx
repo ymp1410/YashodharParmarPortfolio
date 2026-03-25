@@ -126,7 +126,7 @@ export const PROJECTS: Project[] = [
     title: "Phoenix Sky Harbor Airport Visualization",
     description: "Created a dashboard to visualise live car parking data, thus improving the parking lot management.",
     tags: ["Data Visualization", "Dashboard", "Analytics"],
-    link: "https://github.com/Pirate1410/PHX_SkyHarbor_Airport_ParkingViz"
+    link: "https://github.com/Pirate1410/PHX_SkyHarbor_Airport_ParkingViz",     demoLink: "https://ymp1410-phx-skyharbor-airport-parkingviz-app-nhryow.streamlit.app/"
   }
 ];
 
