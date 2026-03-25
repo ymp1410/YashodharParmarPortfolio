@@ -18,6 +18,7 @@ export interface Project {
   description: string;
   tags: string[];
   link?: string;
+    demoLink?: string;
 }
 
 export interface Experience {
