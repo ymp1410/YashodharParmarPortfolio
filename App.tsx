@@ -399,7 +399,7 @@ const App: React.FC = () => {
                     className="group inline-block"
                   >
                     <img
-                      src="https://higherlogicdownload.s3.amazonaws.com/BETAGAMMASIGMA/a8e50d81-26f2-4c75-9216-826808f3da50/UploadedImages/Member/Member_Badge/BGS_Member_Badge.png"
+                      src="https://higherlogicdownload.s3.amazonaws.com/BETAGAMMASIGMA/a8e50d81-26f2-4c75-9216-826808f3da50/UploadedImages/Member%20/Member_Badge/BGS_Member_Badge.png"
                       alt="Beta Gamma Sigma Member Badge"
                       width={200}
                       height={127}
