@@ -388,13 +388,32 @@ const App: React.FC = () => {
                     </div>
                   ))}
                 </div>
+                                {/* Beta Gamma Sigma */}
+                <div className="mt-6 pt-6 border-t border-slate-200">
+                  <p className="text-xs font-bold uppercase tracking-widest text-rose-500/70 mb-3">Honors &amp; Affiliations</p>
+                  <a
+                    href="https://www.betagammasigma.org/home"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Beta Gamma Sigma"
+                    className="group inline-block"
+                  >
+                    <img
+                      src="https://higherlogicdownload.s3.amazonaws.com/BETAGAMMASIGMA/a8e50d81-26f2-4c75-9216-826808f3da50/UploadedImages/Member/Member_Badge/BGS_Member_Badge.png"
+                      alt="Beta Gamma Sigma Member Badge"
+                      width={200}
+                      height={127}
+                      className="h-auto w-[160px] sm:w-[200px] transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Beta Gamma Sigma Badge */}                 <div className="mt-8 flex flex-col items-start gap-3">                   <p className="text-xs uppercase tracking-[0.2em] text-slate-400 font-medium">Honors &amp; Affiliations</p>                   <a                     href="https://www.betagammasigma.org/home"                     target="_blank"                     rel="noopener noreferrer"                     aria-label="Visit Beta Gamma Sigma"                     className="group inline-block"                   >                     <img                       src="https://higherlogicdownload.s3.amazonaws.com/BETAGAMMASIGMA/a8e50d81-26f2-4c75-9216-826808f3da50/UploadedImages/Member/Member_Badge/BGS_Member_Badge.png"                       alt="Beta Gamma Sigma Member Badge"                       width={220}                       height={139}                       className="h-auto w-[160px] sm:w-[210px] rounded-xl shadow-md transition-transform duration-300 group-hover:scale-105"                     />                   </a>                 </div>                  {/* Experience Section */}
+      
       <section
         id="experience"
         className="py-40 relative overflow-hidden bg-slate-950"
