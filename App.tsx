@@ -369,7 +369,7 @@ const App: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <div className="glass-card p-12 rounded-[4rem] relative overflow-hidden group reveal border-slate-200">
+              <div className="glass-card p-12 rounded-[4rem] relative group reveal border-slate-200">
                 <div className="absolute -top-32 -right-32 w-80 h-80 bg-purple-400/10 rounded-full blur-[100px] group-hover:bg-purple-400/20 transition-all duration-1000"></div>
 
                 <h4 className="text-2xl font-bold text-slate-900 mb-10 flex items-center">
