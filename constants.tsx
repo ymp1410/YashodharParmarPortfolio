@@ -4,30 +4,30 @@ import { Project, Experience, Education } from './types';
 
 export const PERSONAL_INFO = {
   name: "Yashodhar Parmar",
-  title: "AI Consultant & Creative Tech Specialist",
-  email: "Yasshodharparmar@gmail.com",
+  title: "AI Strategy, Enterprise AI & Agentic Systems",
+  email: "yasshodharparmar@gmail.com",
   phone: "+1 (480) 560-1852",
   location: "Tempe, AZ",
-  linkedin: "https://www.linkedin.com/in/yashodhar-parmar-b9b52125a",
-  about: "I bridge the gap between business strategy and cutting-edge Artificial Intelligence. Currently pursuing my Masters in AI in Business at ASU, I leverage my background from Deloitte USI and Zoom Innovation Labs to help enterprises reimagining their pipelines with Generative AI.",
+  linkedin: "https://www.linkedin.com/in/yashodhar-parmar",
+  about: "I am an AI Strategy Professional with a Master’s in AI in Business and about 4 years of hands-on experience, offering a rare blend of technical depth, design centricity, and business acumen. I specialize in enterprise AI deployment and agentic systems, bridging the gap between business strategy and cutting-edge machine intelligence.",
   personalMission: "I operate at the intersection of Tech and Business, fueled by Creativity and Design. My mission is to translate complex machine intelligence into scalable, high-impact business solutions that never compromise on human-centric aesthetics."
 };
 
 export const PERSONAL_STORY = {
   narrative: [
-    "I am Yashodhar Parmar, an AI Consultant and AI Business Strategist who transforms emerging technologies into scalable business solutions.",
-    "From leading XR and GenAI product initiatives at Deloitte to building agentic AI systems and analytics dashboards for public-sector clients like the City of Scottsdale, I specialize in bridging business objectives with technical execution.",
+    "I am Yashodhar Parmar, an AI Strategy Professional and AI Business Strategist who transforms emerging technologies into scalable business solutions.",
+    "From researching large language models and leading XR product roadmaps at Deloitte to building agentic AI systems and analytics dashboards for public-sector clients like the City of Scottsdale, I specialize in bridging business objectives with technical execution.",
     "With experience spanning AI workflows, LLM systems, enterprise automation, and user-centered design, I bring a structured, data-driven, and outcome-focused approach to innovation.",
     "My Motto: People show trust in me and I deliver!"
   ],
   quickFacts: [
-    { label: "Obsession", value: "GenAI and Ethical AI Strategy" },
+    { label: "Obsession", value: "AI Strategy & Agentic Systems" },
     { label: "Global Perspective", value: "Delegate @ London Tech Week" },
     { label: "Academics", value: "4.0 GPA @ ASU W.P. Carey" },
-    { label: "Mantra", value: "Design-Led AI Strategy" }
+    { label: "Languages", value: "English, Hindi, Gujarati, French" }
   ],
   pillars: [
-    { title: "Tech", description: "Python, FastAPI, RAG, and XR development.", icon: "code" },
+    { title: "Tech", description: "Python, FastAPI, RAG, and Agentic workflows.", icon: "code" },
     { title: "Business", description: "Consulting strategy, ROI-driven AI, and data analytics.", icon: "briefcase" },
     { title: "Creativity", description: "Podcast direction, storytelling, and innovative media.", icon: "sparkles" },
     { title: "Design", description: "Figma, UI/UX, and immersive experience architecture.", icon: "palette" }
@@ -36,84 +36,84 @@ export const PERSONAL_STORY = {
 
 export const EXPERIENCES: Experience[] = [
   {
+    role: "AI Research Assistant",
+    company: "Department of Information Systems, W. P. Carey School of Business, Arizona State University, Tempe, AZ",
+    period: "June 2026 – Present",
+    highlights: [
+      "Worked on research topics in AI and Large Language Models, including data collection and analysis, machine learning and deep learning modeling, data engineering, cleaning tasks, and labeling tasks.",
+      "Provided assistance in developing tutorials and assignments related to Agentic AI, ML, and DL topics in general."
+    ]
+  },
+  {
     role: "AI Business Strategist",
-    company: "City of Scottsdale, Scottsdale, AZ",
+    company: "City of Scottsdale - Capstone, Scottsdale, AZ",
     period: "Jan 2026 – May 2026",
     highlights: [
-      "Partnered with the City of Scottsdale for capstone project to improve the resident complaint system (ScottsdaleEZ), by implementing prediction models, and displaying data analysis driven insights PowerBI dashboard, enabling officials to predict community issues. Thus, incorporating quality monitoring, safety constraints, and evaluation metrics to reduce resolution time by 30%."
+      "Partnered with the City of Scottsdale for a capstone project to improve and provide data-driven AI strategy for their ScottsdaleEZ platform.",
+      "Delivered a prediction model deployed on AWS SageMaker and data analysis driven insights on a Power BI dashboard, enabling officials to predict community issues and deploy assets efficiently, increasing service quality by 30%."
     ]
   },
   {
     role: "Creative Technology Consultant",
-    company: "Enterprise Tech ASU, Tempe",
+    company: "Enterprise Technology ASU (Zoom Innovation Labs), Tempe, AZ",
     period: "Oct 2025 – May 2026",
     highlights: [
-      "Worked at Zoom Innovation Labs, supporting client engagements through podcast direction, recording, and production management to enhance content quality and engagement.",
-      "Did end-to-end production setup for major podcasts, like the Pat Tillman Podcast, Taiwan Club Podcast, etc."
+      "Worked at Zoom Innovation Labs, supporting client engagements through podcast direction, recording, and production management to enhance content quality and stakeholder engagement.",
+      "Developed an Agentic AI chatbot at Zoom Innovation Labs to assist clients with concept ideation and workflow optimization."
     ]
   },
   {
-    role: "Cohort Engagement Board member",
-    company: "MS-AIB W. P. Carey School of Business, Tempe",
-    period: "Oct 2025 – May 2026",
+    role: "XR Consultant",
+    company: "Deloitte Consulting, India",
+    period: "June 2022 – August 2025",
     highlights: [
-      "Planned, managed, and executed an Alumni meet and a Tech Talk for the cohort, addressing student questions towards current AI market.",
-      "Served as the primary liaison between students and the program coordinator, ensuring smooth communication."
+      "Worked as a Digital Customer Consultant at Deloitte USI (US offices in India) and orchestrated the end-to-end XR experience using 3D tech like Autodesk Maya, Blender, Unreal Engine, etc., catering to Fortune 500 clients and global clients from the US, Canada, UAE, and Saudi Arabia.",
+      "Owned the XR product roadmap for enterprises, defining POCs, success metrics, KPIs, and release milestones in collaboration with engineering, design, and business stakeholders.",
+      "Awards: “Excellence Applause Award” – 2023 and 2024 performance year; “Outstanding Performance Award” – 2024-25 performance year; “Exceptional” rating in 2024 and 2025."
     ]
   },
   {
-    role: "AI Consultant",
-    company: "Deloitte USI, Bangalore",
-    period: "June 2022 – Aug 2025",
+    role: "Project Team Lead Intern",
+    company: "Technokrat Solutions, India",
+    period: "June 2021 – August 2021",
     highlights: [
-      "Worked as a Digital Customer Consultant at Deloitte USI (US offices in India), leading various XR and AI projects, majorly catering international clients from US (Major Fortune 500 companies), Canada, UAE and Saudi Arabia.",
-      "Later Upskilled and Promoted to AI Consultant.",
-      "Owned GenAI product roadmap for enterprise automation tools, defining POCs, success metrics, and release milestones in collaboration with engineering team, design team and business stakeholder.",
-      "AWARDS: “Excellence Applause Award”- 2023 and 2024 performance year, “Outstanding Performance Award”- 2024-25 performance year, “EXCEPTIONAL” Rating in 2024 and 2025."
-    ]
-  },
-  {
-    role: "Project Team Lead",
-    company: "Technokrat Solutions (Internship)",
-    period: "June 2021 – Aug 2021",
-    highlights: [
-      "Created and implemented a full-proof hardware to software pipeline for RFID based asset tracking solution for POWERGRID Corporation of India Limited (PGCIL), reducing the error margin from 40% to almost null."
+      "Designed and deployed an IoT data pipeline for RFID-based asset tracking at POWERGRID Corporation of India (PGCIL), overseeing hardware-to-software integration, production reliability, and optimization, reducing error margin from 40% to 0%."
     ]
   }
 ];
 
 export const EDUCATION: Education[] = [
   {
-    degree: "Masters in AI in Business",
-    institution: "W. P. Carey School of Business, Arizona State University",
-    period: "Aug 2025 – May 2026",
-    details: "4.0 CGPA. Focused on Machine Learning, Programming for AI, and Enterprise Data Analytics."
+    degree: "Master of Science, AI in Business",
+    institution: "W. P. Carey School of Business, Arizona State University, Tempe, AZ",
+    period: "August 2025 – May 2026",
+    details: "GPA: 4.0/4.0. Focused on Machine Learning, Programming for AI, and Enterprise Data Analytics."
   },
   {
-    degree: "Bachelors of Technology (Electronics & Communication)",
-    institution: "National Institute of Technology (NIT), Surat, India",
-    period: "2018 – 2022",
+    degree: "Bachelor of Technology, Electronics and Communication Engineering",
+    institution: "Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat, Gujarat, India",
+    period: "August 2018 – May 2022",
     details: "Focus on electronics, signal processing, and telecommunications."
   }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: "Tiershift",
-    description: "Customer subscription fit analyzer tool created using Netflix user dataset, to help streaming services understand and improve client subscription fit.",
+    title: "Customer Subscription Analyzer Tool",
+    description: "Performed data exploration, cleaning, and analysis on a Netflix dataset, and created a tool to help streaming services understand and improve client subscription fit; documented findings and model behavior.",
     tags: ["Data Analysis", "Python", "Machine Learning"],
     link: "https://github.com/Pirate1410/TierShift.git"
   },
   {
-    title: "VibeCheckAI",
-    description: "An award-winning AI tool designed to bridge the gap between different generations and communication styles within teams.",
-    tags: ["GenAI", "Communication", "LLM"],
+    title: "VibeCheckAI | 2026 Business Innovation Challenge",
+    description: "Architected a high-impact AI solution bridging intergenerational communication gaps; developed the commercial value proposition, pitch decks, and GTM assets; secured the Audience Choice Award.",
+    tags: ["GenAI", "Communication", "LLM", "Business Innovation"],
     link: "https://gemini.google.com/share/e84107e4c613"
   },
   {
     title: "Agentic AI Blog Expert",
-    description: "Designed an end-to-end agentic AI system that automates the content creation workflow from ideation to revision, integrating Groq and OpenAI APIs for task-specific roles (Planner → Researcher → Writer → Editor → Reviser).",
-    tags: ["Agentic AI", "OpenAI API", "Groq"],
+    description: "Built a complete tool to go from ideation to draft, to editing and revising, using the OpenAI API.",
+    tags: ["Agentic AI", "OpenAI API", "LLMs"],
     link: "https://github.com/Pirate1410/Agentic-AI-Blog-Expert.git"
   },
   {
@@ -126,7 +126,8 @@ export const PROJECTS: Project[] = [
     title: "Phoenix Sky Harbor Airport Visualization",
     description: "Created a dashboard to visualise live car parking data, thus improving the parking lot management.",
     tags: ["Data Visualization", "Dashboard", "Analytics"],
-    link: "https://github.com/Pirate1410/PHX_SkyHarbor_Airport_ParkingViz",     demoLink: "https://ymp1410-phx-skyharbor-airport-parkingviz-app-nhryow.streamlit.app/"
+    link: "https://github.com/Pirate1410/PHX_SkyHarbor_Airport_ParkingViz",
+    demoLink: "https://ymp1410-phx-skyharbor-airport-parkingviz-app-nhryow.streamlit.app/"
   }
 ];
 
@@ -146,26 +147,26 @@ export const PRESENTATIONS = [
 ];
 
 export const SKILLS = {
-  ai: ["Agentic AI Workflow", "LLMs", "RAG", "FAISS", "PDF parsers", "Python", "Scikit", "FastAPI", "Streamlit", "Gradio", "Google AI Studios", "Cursor", "Antigravity", "GPT-Family", "Claude", "GeminiPro", "Copilot", "PerplexityPro", "ElevenLabs", "Veo3"],
-  dataAnalytics: ["Pandas", "Numpy", "MySQL", "PostgreSQL", "SQLalchemy", "Tableau", "PowerBI"],
-  rendering3D: ["Architectural Visualization (ArchViz)", "Product visualization and Animation", "Interior Visualization", "3D asset development", "3D environment development", "Modelling for 3D Printing", "3D storytelling", "AR 3D assets", "Minting NFTs"],
-  arVr: ["Reality Composer Pro", "XCode", "ReadyPlayerMe", "Spatial.io", "ARcore", "Unity AR", "LightShip ARDK"],
-  uiUx: ["High fidelity prototyping", "Figma", "Framer", "HTML", "CSS", "JavaScript"],
-  other: ["Unreal Engine 5", "Unity3D", "Adobe Creative Suite", "Microsoft Office", "Google Suite", "Maya", "Blender3D"]
+  strategy: ["Business Value Frameworks", "GTM Strategy", "Solution Blueprinting", "Value Creation Analysis", "Product Roadmap Ownership", "Solution Lifecycle Management", "Agile Workflow", "Stakeholder Management"],
+  aiAgentic: ["GenAI", "LLMs", "RAG Architecture", "Agentic Workflows", "n8n", "MCP", "TensorFlow", "Keras", "FastAPI", "Scikit-learn", "LangChain", "CNN", "VLMs", "Ollama", "ML Workflows", "Databricks", "CrewAI", "MLflow", "Model Tracking", "Google AI Studio", "Groq AI", "Claude Code", "Microsoft Copilot"],
+  dataAnalytics: ["Power BI", "Tableau", "SQL (PostgreSQL, MySQL)", "Python (Pandas, NumPy, Matplotlib)"],
+  aiGovernance: ["NIST AI RMF", "EU AI Act", "Human-in-the-Loop Workflows", "Model Evaluation", "Data Quality", "Auditability", "Responsible AI", "LIME", "SHAP"],
+  changeManagement: ["User Training", "Workflow Documentation", "Adoption Measurement", "Stakeholder Feedback", "Iterative Improvement", "Executive Communication"],
+  designPrototyping: ["Design using Gestalt Principles", "High-Fidelity Prototyping", "Figma", "FigJam", "Canva", "FlowStep", "NotebookLM", "Adobe Creative Suite"]
 };
 
 export const RESUME_CONTEXT = `
 Full Name: Yashodhar Parmar
-Role: AI Consultant & Creative Tech Specialist
+Role: AI Strategy & Agentic Systems Professional
 Education: MS in AI in Business (ASU, 4.0 GPA), B.Tech in Electronics (NIT Surat)
 Experience Highlights: 
-- AI Consultant at Deloitte USI (XR & GenAI projects for global Fortune 500s).
-- Creative Tech Consultant for Zoom Innovation Labs.
-- Delegate at London Tech Week 2024 (British High Commission).
-- Reduced error margins from 30% to 0% for POWERGRID Corp.
-Skills: Expert in Prompt Engineering (Gemini, Claude, GPT), Python development, UI/UX (Figma), and XR (Unreal/Unity).
-Awards: Multiple "Excellence" awards and "EXCEPTIONAL" performance ratings.
-Contact: Yasshodharparmar@gmail.com, +1 (480) 560-1852.
+- AI Research Assistant at W.P. Carey School of Business (AI & LLM research).
+- AI Business Strategist at City of Scottsdale (reduced resolution time/increased quality by 30%).
+- Creative Tech Consultant for Zoom Innovation Labs (built Agentic AI chatbot).
+- XR Consultant at Deloitte Consulting (directed XR experiences for Fortune 500s).
+- Project Team Lead Intern at Technokrat Solutions (reduced RFID tracking error margin from 40% to 0%).
+Skills: GenAI, LLMs, RAG, Agentic Workflows, n8n, MCP, Python, SQL, Power BI, NIST AI RMF, Design/Figma.
+Achievements: OpenAI Course Reviewer, Beta Gamma Sigma, Cohort Engagement Board, ISSC volunteer.
+Contact: yasshodharparmar@gmail.com, +1 (480) 560-1852.
 Location: Tempe, Arizona.
-Current Focus: The intersection of Tech, Business, Creativity, and Design.
 `;
