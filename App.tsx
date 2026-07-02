@@ -62,16 +62,16 @@ const PillarIcon: React.FC<{ name: string; size?: number; className?: string }> 
 };
 
 const ProjectImage: React.FC<{ title: string }> = ({ title }) => {
-  if (title === "Customer Subscription Analyzer Tool") {
+  if (title === "Tiershift") {
     return (
       <div className="w-full h-full flex flex-col items-center justify-center bg-[#edece8] text-[#2b2b2b] group-hover:scale-105 transition-transform duration-1000">
-        <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none m-0 text-center">Subscription</h1>
+        <h1 className="text-5xl md:text-6xl font-black tracking-tighter uppercase leading-none m-0">TIERSHIFT</h1>
         <div className="text-xs md:text-sm font-medium tracking-widest uppercase mt-4 opacity-90 text-center">Predicting Customer Journeys In Netflix</div>
         <div className="text-xs md:text-sm font-medium tracking-widest uppercase mt-1 opacity-90 text-center">Streaming</div>
       </div>
     );
   }
-  if (title.startsWith("VibeCheckAI")) {
+  if (title === "VibeCheckAI") {
     return (
       <div className="w-full h-full flex items-center justify-center bg-[#2e2e85] gap-4 group-hover:scale-105 transition-transform duration-1000">
         <div className="w-16 h-16 bg-[#6b71f2] rounded-2xl flex items-center justify-center shadow-lg">

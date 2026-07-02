@@ -99,13 +99,13 @@ export const EDUCATION: Education[] = [
 
 export const PROJECTS: Project[] = [
   {
-    title: "Customer Subscription Analyzer Tool",
+    title: "Tiershift",
     description: "Performed data exploration, cleaning, and analysis on a Netflix dataset, and created a tool to help streaming services understand and improve client subscription fit; documented findings and model behavior.",
     tags: ["Data Analysis", "Python", "Machine Learning"],
     link: "https://github.com/Pirate1410/TierShift.git"
   },
   {
-    title: "VibeCheckAI | 2026 Business Innovation Challenge",
+    title: "VibeCheckAI",
     description: "Architected a high-impact AI solution bridging intergenerational communication gaps; developed the commercial value proposition, pitch decks, and GTM assets; secured the Audience Choice Award.",
     tags: ["GenAI", "Communication", "LLM", "Business Innovation"],
     link: "https://gemini.google.com/share/e84107e4c613"
