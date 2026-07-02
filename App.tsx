@@ -62,16 +62,16 @@ const PillarIcon: React.FC<{ name: string; size?: number; className?: string }> 
 };
 
 const ProjectImage: React.FC<{ title: string }> = ({ title }) => {
-  if (title === "Tiershift") {
+  if (title === "Customer Subscription Analyzer Tool") {
     return (
       <div className="w-full h-full flex flex-col items-center justify-center bg-[#edece8] text-[#2b2b2b] group-hover:scale-105 transition-transform duration-1000">
-        <h1 className="text-5xl md:text-6xl font-black tracking-tighter uppercase leading-none m-0">TIERSHIFT</h1>
+        <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none m-0 text-center">Subscription</h1>
         <div className="text-xs md:text-sm font-medium tracking-widest uppercase mt-4 opacity-90 text-center">Predicting Customer Journeys In Netflix</div>
         <div className="text-xs md:text-sm font-medium tracking-widest uppercase mt-1 opacity-90 text-center">Streaming</div>
       </div>
     );
   }
-  if (title === "VibeCheckAI") {
+  if (title.startsWith("VibeCheckAI")) {
     return (
       <div className="w-full h-full flex items-center justify-center bg-[#2e2e85] gap-4 group-hover:scale-105 transition-transform duration-1000">
         <div className="w-16 h-16 bg-[#6b71f2] rounded-2xl flex items-center justify-center shadow-lg">
@@ -388,24 +388,40 @@ const App: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                                {/* Beta Gamma Sigma */}
+                                {/* Honors & Achievements */}
                 <div className="mt-6 pt-6 border-t border-slate-200">
-                  <p className="text-xs font-bold uppercase tracking-widest text-rose-500/70 mb-3">Honors &amp; Affiliations</p>
-                  <a
-                    href="https://www.betagammasigma.org/home"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Visit Beta Gamma Sigma"
-                    className="group inline-block"
-                  >
-                    <img
-                      src="https://higherlogicdownload.s3.amazonaws.com/BETAGAMMASIGMA/a8e50d81-26f2-4c75-9216-826808f3da50/UploadedImages/Member%20/Member_Badge/BGS_Member_Badge.png"
-                      alt="Beta Gamma Sigma Member Badge"
-                      width={200}
-                      height={127}
-                      className="h-auto w-[160px] sm:w-[200px] transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </a>
+                  <p className="text-xs font-bold uppercase tracking-widest text-rose-500/70 mb-4">Honors &amp; Achievements</p>
+                  <div className="flex flex-col xl:flex-row items-start gap-6">
+                    <a
+                      href="https://www.betagammasigma.org/home"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visit Beta Gamma Sigma"
+                      className="group inline-block flex-shrink-0"
+                    >
+                      <img
+                        src="https://higherlogicdownload.s3.amazonaws.com/BETAGAMMASIGMA/a8e50d81-26f2-4c75-9216-826808f3da50/UploadedImages/Member%20/Member_Badge/BGS_Member_Badge.png"
+                        alt="Beta Gamma Sigma Member Badge"
+                        width={160}
+                        height={100}
+                        className="h-auto w-[140px] transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </a>
+                    <ul className="space-y-3 text-slate-600 text-sm font-light">
+                      <li className="flex items-start">
+                        <span className="text-rose-500 mr-2 flex-shrink-0">•</span>
+                        <span>Chosen by the <strong>OpenAI</strong> team to review and analyze their certification course.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-rose-500 mr-2 flex-shrink-0">•</span>
+                        <span>Served as <strong>Cohort Engagement Board</strong> member for the MS-AIB Cohort of 2026.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-rose-500 mr-2 flex-shrink-0">•</span>
+                        <span>Volunteered at the <strong>International Students and Scholars Center (ISSC)</strong>, ASU (100+ events).</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -526,12 +542,12 @@ const App: React.FC = () => {
           <SectionTitle title="The Arsenal" subtitle="A multidisciplinary tech stack built for ROI." />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 stagger-reveal">
             {[
-              { title: "AI & Machine Learning", items: SKILLS.ai, icon: <Sparkles size={20} /> },
-              { title: "Data Analytics", items: SKILLS.dataAnalytics, icon: <Cpu size={20} /> },
-              { title: "3D Rendering", items: SKILLS.rendering3D, icon: <Layers size={20} /> },
-              { title: "AR/VR Development", items: SKILLS.arVr, icon: <Code size={20} /> },
-              { title: "UI/UX Design", items: SKILLS.uiUx, icon: <Palette size={20} /> },
-              { title: "Software & Tools", items: SKILLS.other, icon: <Briefcase size={20} /> }
+              { title: "Strategy & Management", items: SKILLS.strategy, icon: <Briefcase size={20} /> },
+              { title: "AI & Agentic Systems", items: SKILLS.aiAgentic, icon: <Sparkles size={20} /> },
+              { title: "Data Analytics & Viz", items: SKILLS.dataAnalytics, icon: <Cpu size={20} /> },
+              { title: "AI Governance", items: SKILLS.aiGovernance, icon: <Layers size={20} /> },
+              { title: "Change Management", items: SKILLS.changeManagement, icon: <Code size={20} /> },
+              { title: "Design & Prototyping", items: SKILLS.designPrototyping, icon: <Palette size={20} /> }
             ].map((skillGroup, idx) => (
               <div key={idx} className="glass-card p-10 rounded-[3rem] hover:border-rose-400/40 transition-all duration-500 group border-slate-200">
                 <div className="text-rose-500 mb-8 group-hover:scale-110 transition-transform">
@@ -573,7 +589,7 @@ const App: React.FC = () => {
                       <span className="text-slate-900 text-lg md:text-2xl font-light truncate max-w-[200px] md:max-w-none">{PERSONAL_INFO.email}</span>
                     </div>
                   </div>
-                  <a href="https://www.linkedin.com/in/yashodhar-parmar-b9b52125a" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-6 md:space-x-8 group/link">
+                  <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-6 md:space-x-8 group/link">
                     <div className="w-12 h-12 md:w-16 md:h-16 glass-card rounded-2xl flex items-center justify-center group-hover/link:bg-rose-400 transition-all shadow-md border-slate-200">
                       <Linkedin className="text-slate-600 group-hover/link:text-white" size={24} />
                     </div>
