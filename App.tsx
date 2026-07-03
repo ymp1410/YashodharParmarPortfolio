@@ -25,8 +25,7 @@ import profilePhoto from './photo.jpeg';
 import { VideoPlayer } from '@/components/ui/video-thumbnail-player';
 import InteractiveBentoGallery from '@/components/ui/interactive-bento-gallery';
 import { useScreenSize } from '@/hooks/use-screen-size';
-import { PixelTrail } from '@/components/ui/pixel-trail';
-import { GooeyFilter } from '@/components/ui/gooey-filter';
+
 
 // Custom hook for scroll-reveal functionality
 const useScrollReveal = () => {
@@ -158,7 +157,8 @@ const ThreeDWorkPage: React.FC = () => {
       type: "image",
       title: "Hogwarts Castle Render",
       desc: "Detailed 3D modeling and environment render of Hogwarts Castle in Blender.",
-      url: "https://lh3.googleusercontent.com/d/1HDScm5Vf9eO3xiOBJF2MlVeiyThgr9MH",
+      url: "hogwarts_thumb.jpg",
+      thumbnail: "hogwarts_thumb.jpg",
       span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
     },
     {
@@ -167,6 +167,7 @@ const ThreeDWorkPage: React.FC = () => {
       title: "Drowsiness Detection UI Animation",
       desc: "3D camera tracking showing eye status indicators and vehicle drowsiness detection alerts.",
       url: "https://drive.google.com/uc?export=download&id=1lyGMGWPPK3Wze_tR5NnWJUqqosRcma0-",
+      thumbnail: "drowsiness_thumb.png",
       span: "md:col-span-2 md:row-span-2 col-span-1 sm:col-span-2 sm:row-span-2",
     },
     {
@@ -175,14 +176,16 @@ const ThreeDWorkPage: React.FC = () => {
       title: "Smartphone Product Commercial",
       desc: "3D product rendering ad showing dynamic smartphone features and mechanical movements.",
       url: "https://drive.google.com/uc?export=download&id=11_qUr9IwsPZNr0SjGdW3zOUCemKeTYL3",
+      thumbnail: "smartphone_thumb.png",
       span: "md:col-span-1 md:row-span-3 sm:col-span-2 sm:row-span-2",
     },
     {
       id: 4,
       type: "video",
-      title: "Teconico Home Automation",
+      title: "Smart Home Automation",
       desc: "Full interior architectural walkthrough showing remote lights and smart security concepts.",
       url: "https://drive.google.com/uc?export=download&id=1EfoYxPKZ4-k-93M7JUtiXihdr8qtQjpb",
+      thumbnail: "home_automation_thumb.png",
       span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
     },
     {
@@ -191,6 +194,7 @@ const ThreeDWorkPage: React.FC = () => {
       title: "Soft Body Jelly Physics",
       desc: "Satisfying 3D soft-body dynamics simulation of squishy objects bouncing in real-time.",
       url: "https://lh3.googleusercontent.com/d/124aY0Sytd1ii6_5MczFfu8Ss9l1Ef-Yf",
+      thumbnail: "jelly_thumb.jpg",
       span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
     },
     {
@@ -199,15 +203,35 @@ const ThreeDWorkPage: React.FC = () => {
       title: "Satisfying Pendulum Simulation",
       desc: "Looping 3D physics animation representing synchronized waves of a pendulum setup.",
       url: "https://lh3.googleusercontent.com/d/11v6Lll0wKKVKZ_c7Dcjva_v-ckCFyceO",
+      thumbnail: "pendulum_thumb.jpg",
       span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
     },
     {
       id: 7,
       type: "video",
-      title: "Teconico Intro Animation",
-      desc: "Sleek 3D intro logo reveal animation for Teconico corporate brand.",
+      title: "Brand Intro Animation",
+      desc: "Sleek 3D intro logo reveal animation for corporate branding.",
       url: "https://drive.google.com/uc?export=download&id=1EnevLD_daPQFIrjjQRT1F7CpQYkM66Of",
+      thumbnail: "logo_intro_thumb.png",
       span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
+    },
+    {
+      id: 8,
+      type: "image",
+      title: "Archviz Showcase",
+      desc: "High-fidelity 3D architectural interior visualization showing space design and realistic rendering.",
+      url: "archviz_thumb.jpg",
+      thumbnail: "archviz_thumb.jpg",
+      span: "md:col-span-2 md:row-span-2 sm:col-span-2 sm:row-span-2",
+    },
+    {
+      id: 9,
+      type: "video",
+      title: "Brand Logo Animation",
+      desc: "3D brand logo reveal featuring dynamic camera sweeps and clean typography.",
+      url: "https://drive.google.com/uc?export=download&id=1EgX8FbNQvhlE41NUTteG_7w7RGx_pSYQ",
+      thumbnail: "logo_thumb.png",
+      span: "md:col-span-1 md:row-span-3 sm:col-span-2 sm:row-span-2",
     }
   ];
 
@@ -224,45 +248,24 @@ const ThreeDWorkPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative text-slate-100 selection:bg-rose-200/40 bg-black p-6 md:p-12 overflow-y-auto overflow-x-hidden">
-      {/* Background Image - FIXED inset to cover scrollable height */}
-      <img
-        src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2064&auto=format&fit=crop"
-        alt="abstract dark background"
-        className="w-full h-full object-cover fixed inset-0 opacity-40 pointer-events-none -z-20"
-      />
-
-      {/* Gooey Filter & Pixel Trail - FIXED inset so tracking is full viewport */}
-      <GooeyFilter id="gooey-filter-pixel-trail" strength={5} />
-      <div
-        className="fixed inset-0 z-0 pointer-events-none"
-        style={{ filter: "url(#gooey-filter-pixel-trail)" }}
-      >
-        <PixelTrail
-          pixelSize={screenSize.lessThan('md') ? 24 : 32}
-          fadeDuration={0}
-          delay={500}
-          pixelClassName="bg-white"
-        />
-      </div>
-
-      {/* Navigation */}
-      <div className="max-w-7xl mx-auto mb-10 flex justify-between items-center z-50 relative">
+    <div className="min-h-screen relative text-slate-800 selection:bg-rose-200/60 bg-[#fafaf9] p-6 md:p-12 overflow-y-auto overflow-x-hidden">
+      {/* Navigation - z-10 relative (so gallery modal at z-20 covers it cleanly) */}
+      <div className="max-w-7xl mx-auto mb-10 flex justify-between items-center z-10 relative">
         <a
           href="./"
-          className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 hover:bg-slate-800/80 hover:-translate-y-0.5 active:translate-y-0 transition-all font-medium text-sm shadow-sm"
+          className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-md border border-slate-200/80 hover:bg-slate-50 hover:border-slate-300 hover:-translate-y-0.5 active:translate-y-0 transition-all font-medium text-sm shadow-sm"
         >
           <ChevronRight className="rotate-180 text-rose-500" size={16} />
-          <span className="text-slate-300">Back to Professional Portfolio</span>
+          <span className="text-slate-700">Back to Professional Portfolio</span>
         </a>
-        <div className="text-xs font-bold tracking-widest text-slate-400 uppercase">3D Showcase</div>
+        <div className="text-xs font-bold tracking-widest text-slate-500 uppercase">Creative Showcase</div>
       </div>
 
-      {/* Gallery Content */}
-      <div className="relative z-10">
+      {/* Gallery Content - z-20 */}
+      <div className="relative z-20">
         <InteractiveBentoGallery
           mediaItems={mediaItems}
-          title="Yashodhar's 3D Showcase"
+          title="Yashodhar's Creative Showcase"
           description="This work is 6 years old when I started 3D. Please don't judge."
         />
       </div>
