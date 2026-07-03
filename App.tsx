@@ -23,6 +23,10 @@ import {
 import { PERSONAL_INFO, PERSONAL_STORY, EXPERIENCES, EDUCATION, PROJECTS, PRESENTATIONS, SKILLS } from './constants';
 import profilePhoto from './photo.jpeg';
 import { VideoPlayer } from '@/components/ui/video-thumbnail-player';
+import InteractiveBentoGallery from '@/components/ui/interactive-bento-gallery';
+import { useScreenSize } from '@/hooks/use-screen-size';
+import { PixelTrail } from '@/components/ui/pixel-trail';
+import { GooeyFilter } from '@/components/ui/gooey-filter';
 
 // Custom hook for scroll-reveal functionality
 const useScrollReveal = () => {
@@ -62,6 +66,19 @@ const PillarIcon: React.FC<{ name: string; size?: number; className?: string }> 
 };
 
 const ProjectImage: React.FC<{ title: string }> = ({ title }) => {
+  if (title === "3D Portfolio Showcase") {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-gradient-to-tr from-purple-900 to-indigo-950 relative overflow-hidden group-hover:scale-105 transition-transform duration-1000">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-rose-500 via-indigo-950 to-indigo-950"></div>
+        <div className="relative z-10 flex flex-col items-center">
+          <div className="w-20 h-20 rounded-[2.5rem] border border-rose-500/30 flex items-center justify-center mb-4 bg-rose-500/10 rotate-45 group-hover:rotate-[90deg] transition-transform duration-700">
+            <Layers className="-rotate-45 group-hover:rotate-[-90deg] transition-transform duration-700 text-rose-400" size={32} />
+          </div>
+          <span className="text-white font-bold tracking-widest uppercase text-xs">Immersive 3D Work</span>
+        </div>
+      </div>
+    );
+  }
   if (title === "Tiershift") {
     return (
       <div className="w-full h-full flex flex-col items-center justify-center bg-[#edece8] text-[#2b2b2b] group-hover:scale-105 transition-transform duration-1000">
@@ -133,7 +150,134 @@ const ProjectImage: React.FC<{ title: string }> = ({ title }) => {
   );
 };
 
+const ThreeDWorkPage: React.FC = () => {
+  const screenSize = useScreenSize();
+  const mediaItems = [
+    {
+      id: 1,
+      type: "image",
+      title: "Hogwarts Castle Render",
+      desc: "Detailed 3D modeling and environment render of Hogwarts Castle in Blender.",
+      url: "https://lh3.googleusercontent.com/d/1HDScm5Vf9eO3xiOBJF2MlVeiyThgr9MH",
+      span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
+    },
+    {
+      id: 2,
+      type: "video",
+      title: "Drowsiness Detection UI Animation",
+      desc: "3D camera tracking showing eye status indicators and vehicle drowsiness detection alerts.",
+      url: "https://drive.google.com/uc?export=download&id=1lyGMGWPPK3Wze_tR5NnWJUqqosRcma0-",
+      span: "md:col-span-2 md:row-span-2 col-span-1 sm:col-span-2 sm:row-span-2",
+    },
+    {
+      id: 3,
+      type: "video",
+      title: "Smartphone Product Commercial",
+      desc: "3D product rendering ad showing dynamic smartphone features and mechanical movements.",
+      url: "https://drive.google.com/uc?export=download&id=11_qUr9IwsPZNr0SjGdW3zOUCemKeTYL3",
+      span: "md:col-span-1 md:row-span-3 sm:col-span-2 sm:row-span-2",
+    },
+    {
+      id: 4,
+      type: "video",
+      title: "Teconico Home Automation",
+      desc: "Full interior architectural walkthrough showing remote lights and smart security concepts.",
+      url: "https://drive.google.com/uc?export=download&id=1EfoYxPKZ4-k-93M7JUtiXihdr8qtQjpb",
+      span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
+    },
+    {
+      id: 5,
+      type: "image",
+      title: "Soft Body Jelly Physics",
+      desc: "Satisfying 3D soft-body dynamics simulation of squishy objects bouncing in real-time.",
+      url: "https://lh3.googleusercontent.com/d/124aY0Sytd1ii6_5MczFfu8Ss9l1Ef-Yf",
+      span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
+    },
+    {
+      id: 6,
+      type: "image",
+      title: "Satisfying Pendulum Simulation",
+      desc: "Looping 3D physics animation representing synchronized waves of a pendulum setup.",
+      url: "https://lh3.googleusercontent.com/d/11v6Lll0wKKVKZ_c7Dcjva_v-ckCFyceO",
+      span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
+    },
+    {
+      id: 7,
+      type: "video",
+      title: "Teconico Intro Animation",
+      desc: "Sleek 3D intro logo reveal animation for Teconico corporate brand.",
+      url: "https://drive.google.com/uc?export=download&id=1EnevLD_daPQFIrjjQRT1F7CpQYkM66Of",
+      span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
+    }
+  ];
+
+  const handleCloseShowcase = () => {
+    try {
+      window.close();
+    } catch (e) {
+      window.location.href = "./";
+    }
+    // Fallback if window.close doesn't fire due to browser security settings
+    setTimeout(() => {
+      window.location.href = "./";
+    }, 100);
+  };
+
+  return (
+    <div className="min-h-screen relative text-slate-100 selection:bg-rose-200/40 bg-black p-6 md:p-12 overflow-y-auto overflow-x-hidden">
+      {/* Background Image - FIXED inset to cover scrollable height */}
+      <img
+        src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2064&auto=format&fit=crop"
+        alt="abstract dark background"
+        className="w-full h-full object-cover fixed inset-0 opacity-40 pointer-events-none -z-20"
+      />
+
+      {/* Gooey Filter & Pixel Trail - FIXED inset so tracking is full viewport */}
+      <GooeyFilter id="gooey-filter-pixel-trail" strength={5} />
+      <div
+        className="fixed inset-0 z-0 pointer-events-none"
+        style={{ filter: "url(#gooey-filter-pixel-trail)" }}
+      >
+        <PixelTrail
+          pixelSize={screenSize.lessThan('md') ? 24 : 32}
+          fadeDuration={0}
+          delay={500}
+          pixelClassName="bg-white"
+        />
+      </div>
+
+      {/* Navigation */}
+      <div className="max-w-7xl mx-auto mb-10 flex justify-between items-center z-50 relative">
+        <a
+          href="./"
+          className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-slate-900/60 backdrop-blur-md border border-slate-700/50 hover:bg-slate-800/80 hover:-translate-y-0.5 active:translate-y-0 transition-all font-medium text-sm shadow-sm"
+        >
+          <ChevronRight className="rotate-180 text-rose-500" size={16} />
+          <span className="text-slate-300">Back to Professional Portfolio</span>
+        </a>
+        <div className="text-xs font-bold tracking-widest text-slate-400 uppercase">3D Showcase</div>
+      </div>
+
+      {/* Gallery Content */}
+      <div className="relative z-10">
+        <InteractiveBentoGallery
+          mediaItems={mediaItems}
+          title="Yashodhar's 3D Showcase"
+          description="This work is 6 years old when I started 3D. Please don't judge."
+        />
+      </div>
+    </div>
+  );
+};
+
 const App: React.FC = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const is3DPage = urlParams.get('page') === '3d';
+
+  if (is3DPage) {
+    return <ThreeDWorkPage />;
+  }
+
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isScrolled, setIsScrolled] = useState(false);
@@ -496,7 +640,7 @@ const App: React.FC = () => {
                   <p className="text-slate-500 leading-relaxed mb-8 md:mb-10 text-base md:text-lg font-light flex-1">{proj.description}</p>
                   {proj.link ? (
                     <a href={proj.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-rose-500 text-sm font-bold group-hover:underline group/link">
-                      View Repository <ExternalLink size={16} className="ml-2 group-hover/link:-translate-y-1 group-hover/link:translate-x-1 transition-transform" />
+                      {proj.title === "3D Portfolio Showcase" ? "Explore 3D Work" : "View Repository"} <ExternalLink size={16} className="ml-2 group-hover/link:-translate-y-1 group-hover/link:translate-x-1 transition-transform" />
                     </a>
                   ) : (
                     <a href="#" className="inline-flex items-center text-rose-500 text-sm font-bold group-hover:underline group/link">
