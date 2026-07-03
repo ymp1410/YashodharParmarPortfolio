@@ -11,16 +11,37 @@ export interface MediaItemType {
     title: string;
     desc: string;
     url: string;
+    thumbnail?: string;
     span: string;
 }
 // MediaItem component renders either a video or image based on item.type
-const MediaItem = ({ item, className, onClick }: { item: MediaItemType, className?: string, onClick?: () => void }) => {
+const MediaItem = ({ item, className, onClick, isThumbnail = false }: { item: MediaItemType, className?: string, onClick?: () => void, isThumbnail?: boolean }) => {
     const videoRef = useRef<HTMLVideoElement>(null); // Reference for video element
     const [isInView, setIsInView] = useState(false); // To track if video is in the viewport
     const [isBuffering, setIsBuffering] = useState(true);  // To track if video is buffering
+    
+    const basePath = import.meta.env.BASE_URL || '/';
+    const thumbUrl = isThumbnail && item.thumbnail ? `${basePath}${item.thumbnail}` : item.url;
+    const [imgSrc, setImgSrc] = useState(thumbUrl);
+
+    useEffect(() => {
+        setImgSrc(thumbUrl);
+    }, [thumbUrl]);
+
+    // Preload full image / GIF in the background and swap once loaded
+    useEffect(() => {
+        if (isThumbnail && item.thumbnail && item.type === 'image') {
+            const img = new Image();
+            img.src = item.url;
+            img.onload = () => {
+                setImgSrc(item.url);
+            };
+        }
+    }, [isThumbnail, item.thumbnail, item.url, item.type]);
 
     // Intersection Observer to detect if video is in view and play/pause accordingly
     useEffect(() => {
+        if (isThumbnail) return;
         const options = {
             root: null,
             rootMargin: '50px',
@@ -45,6 +66,7 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
     }, []);
     // Handle video play/pause based on whether the video is in view or not
     useEffect(() => {
+        if (isThumbnail) return;
         let mounted = true;
 
         const handleVideoPlay = async () => {
@@ -89,7 +111,22 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
 
     // Render either a video or image based on item.type
 
+    // If static thumbnail is provided and we are rendering in bento grid, use that image source
+    if (isThumbnail && item.thumbnail) {
+        return (
+            <img
+                src={imgSrc}
+                alt={item.title}
+                className={`${className} object-cover cursor-pointer`}
+                onClick={onClick}
+                loading="lazy"
+                decoding="async"
+            />
+        );
+    }
+
     if (item.type === 'video') {
+        const videoSrc = item.url;
         return (
             <div className={`${className} relative overflow-hidden`}>
                 <video
@@ -99,17 +136,18 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
                     playsInline
                     muted
                     loop
+                    autoPlay={isThumbnail}
                     preload="auto"
                     style={{
-                        opacity: isBuffering ? 0.8 : 1,
+                        opacity: isThumbnail ? 1 : (isBuffering ? 0.8 : 1),
                         transition: 'opacity 0.2s',
                         transform: 'translateZ(0)',
                         willChange: 'transform',
                     }}
                 >
-                    <source src={item.url} type="video/mp4" />
+                    <source src={videoSrc} type="video/mp4" />
                 </video>
-                {isBuffering && (
+                {!isThumbnail && isBuffering && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/10">
                         <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     </div>
@@ -120,7 +158,7 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
 
     return (
         <img
-            src={item.url} // Image source URL
+            src={imgSrc} // Image source URL (static thumbnail or loaded GIF/high-res image)
             alt={item.title} // Alt text for the image
             className={`${className} object-cover cursor-pointer`} // Style the image
             onClick={onClick} // Trigger onClick when the image is clicked
@@ -316,7 +354,7 @@ const InteractiveBentoGallery: React.FC<InteractiveBentoGalleryProps> = ({ media
             <div className="mb-8 text-center">
                 <motion.h1
                     className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent 
-                             bg-gradient-to-r from-white via-rose-300 to-purple-300"
+                             bg-gradient-to-r from-slate-900 via-rose-800 to-purple-900"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -324,7 +362,7 @@ const InteractiveBentoGallery: React.FC<InteractiveBentoGalleryProps> = ({ media
                     {title}
                 </motion.h1>
                 <motion.p
-                    className="mt-2 text-sm sm:text-base text-slate-300"
+                    className="mt-2 text-sm sm:text-base text-slate-600"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
@@ -399,6 +437,7 @@ const InteractiveBentoGallery: React.FC<InteractiveBentoGalleryProps> = ({ media
                                     item={item}
                                     className="absolute inset-0 w-full h-full"
                                     onClick={() => !isDragging && setSelectedItem(item)}
+                                    isThumbnail={true}
                                 />
                                 <motion.div
                                     className="absolute inset-0 flex flex-col justify-end p-2 sm:p-3 md:p-4"
