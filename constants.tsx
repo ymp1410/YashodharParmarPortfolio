@@ -99,6 +99,12 @@ export const EDUCATION: Education[] = [
 
 export const PROJECTS: Project[] = [
   {
+    title: "3D Portfolio Showcase",
+    description: "A comprehensive gallery of my 3D design work, including high-fidelity architectural walkthroughs, product advertisements, and mechanical physics simulations.",
+    tags: ["3D Visualization", "Blender", "Unreal Engine", "Animation"],
+    link: "./?page=3d"
+  },
+  {
     title: "Tiershift",
     description: "Performed data exploration, cleaning, and analysis on a Netflix dataset, and created a tool to help streaming services understand and improve client subscription fit; documented findings and model behavior.",
     tags: ["Data Analysis", "Python", "Machine Learning"],
