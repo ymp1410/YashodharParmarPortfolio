@@ -3,6 +3,15 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react';
 
+const resolveAssetPath = (url: string) => {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+        return url;
+    }
+    const basePath = import.meta.env.BASE_URL || '/';
+    const cleanUrl = url.startsWith('/') ? url.substring(1) : url;
+    return `${basePath}${cleanUrl}`;
+};
 
 // MediaItemType defines the structure of a media item
 export interface MediaItemType {
@@ -20,8 +29,8 @@ const MediaItem = ({ item, className, onClick, isThumbnail = false }: { item: Me
     const [isInView, setIsInView] = useState(false); // To track if video is in the viewport
     const [isBuffering, setIsBuffering] = useState(true);  // To track if video is buffering
     
-    const basePath = import.meta.env.BASE_URL || '/';
-    const thumbUrl = isThumbnail && item.thumbnail ? `${basePath}${item.thumbnail}` : item.url;
+    const thumbUrl = isThumbnail && item.thumbnail ? resolveAssetPath(item.thumbnail) : resolveAssetPath(item.url);
+    const fullUrl = resolveAssetPath(item.url);
     const [imgSrc, setImgSrc] = useState(thumbUrl);
 
     useEffect(() => {
@@ -32,12 +41,12 @@ const MediaItem = ({ item, className, onClick, isThumbnail = false }: { item: Me
     useEffect(() => {
         if (isThumbnail && item.thumbnail && item.type === 'image') {
             const img = new Image();
-            img.src = item.url;
+            img.src = fullUrl;
             img.onload = () => {
-                setImgSrc(item.url);
+                setImgSrc(fullUrl);
             };
         }
-    }, [isThumbnail, item.thumbnail, item.url, item.type]);
+    }, [isThumbnail, item.thumbnail, fullUrl, item.type]);
 
     // Intersection Observer to detect if video is in view and play/pause accordingly
     useEffect(() => {
@@ -229,11 +238,11 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                                     muted
                                     loop
                                     autoPlay
-                                    src={selectedItem.url}
+                                    src={resolveAssetPath(selectedItem.url)}
                                 />
                             ) : (
                                 <img
-                                    src={selectedItem.url}
+                                    src={resolveAssetPath(selectedItem.url)}
                                     alt={selectedItem.title}
                                     className="max-w-full max-h-[60vh] object-contain rounded-lg shadow-inner bg-black/20"
                                     onClick={onClose}
